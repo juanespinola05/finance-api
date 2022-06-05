@@ -9,22 +9,22 @@ app.use(express.json())
 
 setupRoutes(app)
 
-const include = [
-  'http://localhost:8081',
-  'alkemy-fullstack-js-challenge-gpl31yexj-juanespinola05.vercel.app'
-]
+// const include = [
+//   'http://localhost:8081',
+//   'alkemy-fullstack-js-challenge-gpl31yexj-juanespinola05.vercel.app'
+// ]
 
-const options = {
-  origin: (origin, callback) => {
-    if (include.includes(origin) || !origin) {
-      callback(null, true)
-    } else {
-      callback(new Error('Unauthorized'))
-    }
-  }
-}
+// const options = {
+//   origin: (origin, callback) => {
+//     if (include.includes(origin) || !origin || true) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Unauthorized'))
+//     }
+//   }
+// }
 
-app.use(cors(options))
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('T-Finanance API')
