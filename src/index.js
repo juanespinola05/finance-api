@@ -7,6 +7,7 @@ const { logErrors, handleSQLError, handleBoomError, handleError } = require('./m
 const app = express()
 app.use(express.json())
 
+app.use(cors())
 setupRoutes(app)
 
 // const include = [
@@ -24,7 +25,6 @@ setupRoutes(app)
 //   }
 // }
 
-// app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('T-Finanance API')
