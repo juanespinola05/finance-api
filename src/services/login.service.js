@@ -18,7 +18,7 @@ class LoginService {
       : await bcrypt.compare(password, user.password)
 
     if (!user || !passwordMatch) {
-      boom.unauthorized('Invalid email or password')
+      throw boom.unauthorized('Invalid email or password')
     }
 
     const tokenPayload = {
