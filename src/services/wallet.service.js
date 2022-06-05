@@ -18,7 +18,6 @@ class WalletService {
         userId
       }
     })
-    console.log(lastMonthOperations)
     const incomeTotal =
       lastMonthOperations
         .filter(op => op.dataValues.type === 'income')

@@ -36,7 +36,7 @@ operationsRouter.get('/:year/:month',
   async (req, res, next) => {
     try {
       const { year, month, limit, offset } = req.params
-      const operations = await service.findByMonth({
+      const operations = await OperationsService.findByMonth({
         email: req.user.email,
         year,
         month,
@@ -59,7 +59,6 @@ operationsRouter.patch('/edit/:id',
     const { id } = req.params
     try {
       const operationChanges = await service.update(id, req.body)
-      console.log(operationChanges)
       res.status(200).json(operationChanges)
     } catch (error) {
       next(error)
