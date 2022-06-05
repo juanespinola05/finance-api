@@ -10,7 +10,8 @@ app.use(express.json())
 setupRoutes(app)
 
 const include = [
-  'http://localhost:8081'
+  'http://localhost:8081',
+  'alkemy-fullstack-js-challenge-gpl31yexj-juanespinola05.vercel.app'
 ]
 
 const options = {
